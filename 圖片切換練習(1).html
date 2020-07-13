@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d8253112ff.js" crossorigin="anonymous"></script>
+    <title>圖片切換練習</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #container{
+            margin: 20px auto;
+            padding: 10px;
+            width: 600px;
+            background-color: brown;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        img{
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            
+        }
+        #up{
+            position: absolute;
+            left: 159px;
+            right: 0;
+            cursor: pointer;
+        }
+        #next{
+            position: absolute;
+            right: 159px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<div id="container">
+<img src="1.jpg" alt="圖片">
+<i class="fas fa-angle-double-left" id="up"></i>
+<i class="fas fa-angle-double-right"  id="next"></i>
+
+</div>
+
+
+
+<script>
+
+window.onload = function(){
+
+var up = document.getElementById('up');
+var next = document.getElementById('next');
+var img = document.getElementsByTagName('img')[0];
+
+
+var imgArr = ["1.jpg", "2.jpg","3.jpg","4.jpg","5.jpg"];
+
+var index = 0; //設置圖片索引
+
+up.onclick = function(){
+
+    index--;
+    if(index < 0){
+        index=imgArr.length-1;
+    }
+    img.src=imgArr[index];
+};
+
+
+next.onclick=function(){
+
+    index++;
+
+    if(index > imgArr.length-1 ){
+            index = 0 ;
+        }
+        img.src = imgArr[index];
+
+};
+
+
+};
+
+
+</script>
+    
+</body>
+</html>
