@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 280px;
+            background-color: #777;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        button{
+            margin:  30px 25px;
+            font-size: 1em;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div>
+    <p>Web前端課程</p>
+    <p>原價:1000</p>
+    <p>限價:500</p>
+    <p>內容:HTML，CSS JavaScript</p>
+    <p>地址:台中市北屯區</p>
+    <p>
+        <button>取消</button>
+        <button>支付</button>
+    </p>
+   
+</div>
+<script>
+  var btn = document.getElementsByTagName('button')[1];
+  btn.onclick = function(){
+   var res = window.confirm('您確定要付款嗎?');
+   if(res = true){
+       location.href = '/confirm.html';//去補location 等
+   }
+  }
+
+  //需要補充的是location等相關知識
+</script>
+
+</body>
+</html>
